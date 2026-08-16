@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#08080a"
+  >
+
+  <title>我哋嘅愛情故事♡</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+  <!-- Background Light -->
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+
+
+  <!-- =====================================
+       MAIN APP
+  ====================================== -->
+
+  <main id="app">
+
+
+    <!-- =====================================
+         HOME
+    ====================================== -->
+
+    <section
+      id="home"
+      class="page active"
+    >
+
+      <div class="hero-heart">
+        ♡
+      </div>
+
+      <h1>
+        我哋嘅愛情故事
+      </h1>
+
+      <p class="since">
+        在一起 · 2026年4月10日開始
+      </p>
+
+
+      <div class="counter">
+
+        <div class="counter-box">
+          <strong id="years">0</strong>
+          <span>Years</span>
+        </div>
+
+        <div class="counter-box">
+          <strong id="months">0</strong>
+          <span>Months</span>
+        </div>
+
+        <div class="counter-box">
+          <strong id="days">0</strong>
+          <span>Days</span>
+        </div>
+
+        <div class="counter-box">
+          <strong id="hours">0</strong>
+          <span>Hours</span>
+        </div>
+
+        <div class="counter-box">
+          <strong id="minutes">0</strong>
+          <span>Minutes</span>
+        </div>
+
+        <div class="counter-box">
+          <strong id="seconds">0</strong>
+          <span>Seconds</span>
+        </div>
+
+      </div>
+
+
+      <p class="home-message">
+
+        ※ 去邊都要一齊 ※
+
+        <br><br>
+
+        一直都咁愛你，
+        份愛永遠唔會變。
+
+        <br>
+
+        以後都一齊製造更多屬於我哋嘅回憶 ♡
+
+      </p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         OUR PHOTOS
+    ====================================== -->
+
+    <section
+      id="photos"
+      class="page"
+    >
+
+      <div class="section-header">
+
+        <div>
+
+          <span class="eyebrow">
+            MEMORIES
+          </span>
+
+          <h2>
+            Our Photos
+          </h2>
+
+          <p class="section-subtitle">
+            我哋嘅每一個珍貴回憶 ♡
+          </p>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="add-memory-button"
+          onclick="openMemoryModal()"
+        >
+
+          <span>＋</span>
+
+        </button>
+
+      </div>
+
+
+      <!-- Memory Count -->
+
+      <div class="memory-info">
+
+        <span id="memoryCount">
+          0 Memories
+        </span>
+
+      </div>
+
+
+      <!-- Gallery -->
+
+      <div
+        id="memoryGallery"
+        class="memory-gallery"
+      >
+
+        <!-- Empty State -->
+
+        <div
+          id="emptyMemory"
+          class="empty-memory"
+        >
+
+          <div class="empty-icon">
+            ♡
+          </div>
+
+          <h3>
+            Our memories
+          </h3>
+
+          <p>
+            Add your first memory<br>
+            and keep it forever.
+          </p>
+
+          <button
+            type="button"
+            onclick="openMemoryModal()"
+            class="primary-button"
+          >
+
+            ＋ Add Memory
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         LOVE LETTER
+    ====================================== -->
+
+    <section
+      id="letters"
+      class="page"
+    >
+
+      <div class="placeholder-page">
+
+        <div class="placeholder-icon">
+          ♡
+        </div>
+
+        <h2>
+          Love Letter
+        </h2>
+
+        <p>
+          Our little thoughts<br>
+          and feelings.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ANNIVERSARY
+    ====================================== -->
+
+    <section
+      id="anniversary"
+      class="page"
+    >
+
+      <div class="placeholder-page">
+
+        <div class="placeholder-icon">
+          ♡
+        </div>
+
+        <h2>
+          Anniversary
+        </h2>
+
+        <p>
+          Every month is<br>
+          another little milestone.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         MUSIC
+    ====================================== -->
+
+    <section
+      id="music"
+      class="page"
+    >
+
+      <div class="placeholder-page">
+
+        <div class="placeholder-icon">
+          ♫
+        </div>
+
+        <h2>
+          Music Box
+        </h2>
+
+        <p>
+          Our favorite songs<br>
+          will live here.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================
+       ADD MEMORY MODAL
+  ====================================== -->
+
+  <div
+    id="memoryModal"
+    class="modal-overlay"
+    onclick="closeMemoryModal(event)"
+  >
+
+    <div
+      class="memory-modal glass"
+      onclick="event.stopPropagation()"
+    >
+
+
+      <!-- Modal Header -->
+
+      <div class="modal-header">
+
+        <div>
+
+          <span class="eyebrow">
+            NEW MEMORY
+          </span>
+
+          <h2>
+            Add Memory
+          </h2>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="close-button"
+          onclick="closeMemoryModal()"
+        >
+
+          ×
+
+        </button>
+
+      </div>
+
+
+
+      <!-- Photo Upload -->
+
+      <label
+        for="memoryImage"
+        class="photo-upload"
+        id="photoUpload"
+      >
+
+        <div
+          id="uploadPreview"
+          class="upload-preview"
+        >
+
+          <span class="upload-icon">
+            ＋
+          </span>
+
+          <strong>
+            Add Photo
+          </strong>
+
+          <small>
+            Choose from your device
+          </small>
+
+        </div>
+
+      </label>
+
+
+      <input
+        type="file"
+        id="memoryImage"
+        accept="image/*"
+        hidden
+      >
+
+
+
+      <!-- Title -->
+
+      <div class="input-group">
+
+        <label>
+          Title
+        </label>
+
+        <input
+          type="text"
+          id="memoryTitle"
+          placeholder="Our first photo..."
+          maxlength="80"
+        >
+
+      </div>
+
+
+
+      <!-- Date -->
+
+      <div class="input-group">
+
+        <label>
+          Date
+        </label>
+
+        <input
+          type="date"
+          id="memoryDate"
+        >
+
+      </div>
+
+
+
+      <!-- Note -->
+
+      <div class="input-group">
+
+        <label>
+          Note
+        </label>
+
+        <textarea
+          id="memoryNote"
+          placeholder="Write something about this memory..."
+          maxlength="500"
+        ></textarea>
+
+      </div>
+
+
+
+      <!-- Save -->
+
+      <button
+        type="button"
+        class="save-memory-button"
+        onclick="saveMemory()"
+      >
+
+        Save Memory ♡
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================
+       FULLSCREEN PHOTO VIEWER
+  ====================================== -->
+
+  <div
+    id="photoViewer"
+    class="photo-viewer"
+    onclick="closePhotoViewer()"
+  >
+
+    <button
+      type="button"
+      class="viewer-close"
+      onclick="closePhotoViewer()"
+    >
+      ×
+    </button>
+
+    <img
+      id="viewerImage"
+      src=""
+      alt="Memory"
+    >
+
+    <div
+      id="viewerCaption"
+      class="viewer-caption"
+    ></div>
+
+  </div>
+
+
+
+  <!-- =====================================
+       IOS GLASS BOTTOM NAV
+  ====================================== -->
+
+  <nav class="bottom-nav">
+
+
+    <button
+      type="button"
+      onclick="showPage('home', this)"
+      class="nav-btn active"
+    >
+
+      <span>⌂</span>
+      <small>Home</small>
+
+    </button>
+
+
+    <button
+      type="button"
+      onclick="showPage('photos', this)"
+      class="nav-btn"
+    >
+
+      <span>♡</span>
+      <small>Photos</small>
+
+    </button>
+
+
+    <button
+      type="button"
+      onclick="showPage('letters', this)"
+      class="nav-btn"
+    >
+
+      <span>✉</span>
+      <small>Letters</small>
+
+    </button>
+
+
+    <button
+      type="button"
+      onclick="showPage('anniversary', this)"
+      class="nav-btn"
+    >
+
+      <span>♢</span>
+      <small>Anniversary</small>
+
+    </button>
+
+
+    <button
+      type="button"
+      onclick="showPage('music', this)"
+      class="nav-btn"
+    >
+
+      <span>♫</span>
+      <small>Music</small>
+
+    </button>
+
+
+  </nav>
+
+
+
+<script type="module" src="app.js"></script>
+  
+</body>
+
+</html>
